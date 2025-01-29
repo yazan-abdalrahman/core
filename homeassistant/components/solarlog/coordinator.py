@@ -19,8 +19,8 @@ from solarlog_cli.solarlog_models import SolarlogData
 from homeassistant.const import CONF_HOST
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-import homeassistant.helpers.device_registry as dr
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 from homeassistant.util import slugify
 
@@ -52,7 +52,6 @@ class SolarLogCoordinator(DataUpdateCoordinator[SolarlogData]):
         path = url.path if url.netloc else ""
         url = ParseResult("http", netloc, path, *url[3:])
         self.unique_id = entry.entry_id
-        self.name = entry.title
         self.host = url.geturl()
 
         self.solarlog = SolarLogConnector(

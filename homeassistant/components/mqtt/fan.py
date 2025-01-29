@@ -27,7 +27,7 @@ from homeassistant.const import (
     CONF_STATE,
 )
 from homeassistant.core import HomeAssistant, callback
-import homeassistant.helpers.config_validation as cv
+from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
 from homeassistant.helpers.template import Template
@@ -226,7 +226,6 @@ class MqttFan(MqttEntity, FanEntity):
     _optimistic_preset_mode: bool
     _payload: dict[str, Any]
     _speed_range: tuple[int, int]
-    _enable_turn_on_off_backwards_compatibility = False
 
     @staticmethod
     def config_schema() -> VolSchemaType:

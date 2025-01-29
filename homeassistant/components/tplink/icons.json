@@ -20,6 +20,18 @@
       },
       "stop_alarm": {
         "default": "mdi:bell-cancel"
+      },
+      "pan_left": {
+        "default": "mdi:chevron-left"
+      },
+      "pan_right": {
+        "default": "mdi:chevron-right"
+      },
+      "tilt_up": {
+        "default": "mdi:chevron-up"
+      },
+      "tilt_down": {
+        "default": "mdi:chevron-down"
       }
     },
     "select": {
@@ -77,6 +89,33 @@
         "state": {
           "on": "mdi:motion-sensor"
         }
+      },
+      "motion_detection": {
+        "default": "mdi:motion-sensor-off",
+        "state": {
+          "on": "mdi:motion-sensor"
+        }
+      },
+      "person_detection": {
+        "default": "mdi:account-off",
+        "state": {
+          "on": "mdi:account"
+        }
+      },
+      "tamper_detection": {
+        "default": "mdi:shield-off",
+        "state": {
+          "on": "mdi:shield"
+        }
+      },
+      "baby_cry_detection": {
+        "default": "mdi:baby-face-outline",
+        "state": {
+          "on": "mdi:baby-face"
+        }
+      },
+      "carpet_boost": {
+        "default": "mdi:rug"
       }
     },
     "sensor": {
@@ -89,17 +128,14 @@
       "signal_level": {
         "default": "mdi:signal"
       },
-      "current_firmware_version": {
-        "default": "mdi:information"
-      },
-      "available_firmware_version": {
-        "default": "mdi:information-outline"
-      },
       "alarm_source": {
         "default": "mdi:bell"
       },
       "water_alert_timestamp": {
         "default": "mdi:clock-alert-outline"
+      },
+      "vacuum_error": {
+        "default": "mdi:alert-circle"
       }
     },
     "number": {
@@ -115,8 +151,14 @@
       "temperature_offset": {
         "default": "mdi:contrast"
       },
-      "target_temperature": {
-        "default": "mdi:thermometer"
+      "pan_step": {
+        "default": "mdi:unfold-more-vertical"
+      },
+      "tilt_step": {
+        "default": "mdi:unfold-more-horizontal"
+      },
+      "clean_count": {
+        "default": "mdi:counter"
       }
     }
   },

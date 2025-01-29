@@ -51,6 +51,9 @@ class MatterEntityInfo:
     # entity class to use to instantiate the entity
     entity_class: type
 
+    # the original discovery schema used to create this entity
+    discovery_schema: MatterDiscoverySchema
+
     @property
     def primary_attribute(self) -> type[ClusterAttributeDescriptor]:
         """Return Primary Attribute belonging to the entity."""
@@ -113,6 +116,18 @@ class MatterDiscoverySchema:
     # NOTE: only works for list values
     value_contains: Any | None = None
 
+    # [optional] the primary attribute value must NOT have this value
+    # for example to filter out invalid values (such as empty string instead of null)
+    # in case of a list value, the list may not contain this value
+    value_is_not: Any | None = None
+
+    # [optional] the primary attribute's cluster featuremap must contain this value
+    # for example for the DoorSensor on a DoorLock Cluster
+    featuremap_contains: int | None = None
+
     # [optional] bool to specify if this primary value may be discovered
     # by multiple platforms
     allow_multi: bool = False
+
+    # [optional] the primary attribute value may not be null/None
+    allow_none_value: bool = False
